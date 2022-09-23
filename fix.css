@@ -1,0 +1,324 @@
+#modal-container {
+  position: absolute;
+  display: table;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  z-index: 1;
+}
+#modal-container.one {
+  transform: scaleY(0.01) scaleX(0);
+  animation: unfoldIn 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.one .modal-background .modal {
+  transform: scale(0);
+  animation: zoomIn 0.5s 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.one.out {
+  transform: scale(1);
+  animation: unfoldOut 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container.one.out .modal-background .modal {
+  animation: zoomOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+#modal-container .modal-background {
+  display: table-cell;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  vertical-align: middle;
+}
+#modal-container .modal-background .modal {
+  background: white;
+  padding: 50px;
+  display: inline-block;
+  border-radius: 3px;
+  font-weight: 300;
+  position: relative;
+  width: 1000px;
+  height: 650px;
+  overflow: hidden;
+}
+#modal-container .modal-background .modal #outOfModal {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  top: 0;
+  border-bottom-left-radius: 5px;
+  outline: none;
+  border: none;
+  transition: all 0.2s;
+  background-color: white;
+}
+#modal-container .modal-background .modal #outOfModal:hover {
+  background-color: red;
+  color: white;
+}
+#modal-container .modal-background .modal h2 {
+  font-size: 25px;
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+#modal-container .modal-background .modal p {
+  font-size: 18px;
+  line-height: 22px;
+}
+#modal-container .modal-background .modal .modal-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+}
+#modal-container .modal-background .modal .modal-svg rect {
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-dasharray: 778;
+  stroke-dashoffset: 778;
+}
+
+.content {
+  min-height: 100%;
+  height: 100%;
+  background: white;
+  position: relative;
+  z-index: 0;
+}
+.content h1 {
+  padding: 75px 0 30px 0;
+  text-align: center;
+  font-size: 30px;
+  line-height: 30px;
+}
+.content .buttons {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+.content .buttons .button {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 15px;
+  margin: 10px;
+  background: red;
+  font-size: 18px;
+  background-color: #efefef;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.content .buttons .button:hover {
+  color: white;
+  background: #009bd5;
+}
+
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+#divfilters {
+  display: flex;
+}
+
+#tkbvqt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#hide p {
+  font-size: 5px;
+}
+
+#hide {
+  background-color: transparent;
+  position: absolute;
+  height: 371px;
+  width: 878px;
+  bottom: 0px;
+}
+
+#ctl00_ContentPlaceHolder1_ctl00_TableRow7 td {
+  border-color: transparent;
+}
+
+#ctl00_ContentPlaceHolder1_ctl00_Table1 {
+  border-color: transparent !important;
+}
+
+.subject {
+  background-color: #6699cc;
+  z-index: 99;
+  position: absolute;
+}
+
+#listSubjects {
+  flex: 1;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+#setTC span {
+  font-size: 58px;
+}
+
+#setTC {
+  width: 10%;
+  padding: 8px;
+  margin-left: 20px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+#tkbvqt {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.centersss {
+  display: flex;
+  margin: 20px 0;
+}
+
+.selectsss {
+  width: 240px;
+}
+
+#divIP {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  position: relative;
+  padding: 5px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#themip {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+#btnThem {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100px;
+  background-color: #6699cc;
+  color: white;
+  transition: 0.2s;
+  border: none;
+  outline: none;
+}
+#btnThem:hover {
+  background-color: white;
+  color: black;
+}
+
+#pcccs {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+#tkbdiv {
+  width: 1200px;
+}
+
+.subjectdivsss {
+  width: 31%;
+  height: 35px;
+  border-radius: 3px;
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px;
+  border: 1px solid #c6c4c4;
+}
+.subjectdivsss .selectsss {
+  outline: none;
+  border: none;
+  flex: 1;
+}
+.subjectdivsss .deleteSubject {
+  height: 100%;
+  width: 35px;
+  border: none;
+  outline: none;
+  background-color: #d34e4e;
+  color: white;
+  transition: 0.2s;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.subjectdivsss .deleteSubject:hover {
+  background-color: white;
+  color: black;
+}
+
+#xuatfiletxt {
+  background-color: #6699cc;
+  color: white;
+  transition: 0.2s;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#xuatfiletxt:hover {
+  background-color: gray;
+  color: white;
+}
+
+/*# sourceMappingURL=fix.css.map */
