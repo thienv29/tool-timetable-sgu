@@ -6601,6 +6601,7 @@ function resetTKB2() {
         top:${tbd * tietWidth - tietWidth + tbd * 0.2}%;
         display:flex;
         border:1px solid white;
+        flex-direction: column;
       `;
           btn.style.cssText = `
         position:absolute;
@@ -6669,13 +6670,14 @@ if (document.querySelector("#ctl00_ContentPlaceHolder1_ctl00_lbltieudetkb")) {
                const data = `${e.thu[index]}|${e.tbd[index]}|${e.st[index]}`;
                listdivSubjectText += `
     <div class="subject"  thu="${e.thu[index]}" tbd="${e.tbd[index]}" st="${e.st[index]
-                    }" subjectId="${e.id} ">
+                    }" subjectId="${e.id} " >
             <a style="    margin: auto;
             font-size: 10px;
             color: white;
             padding: 0;
             line-height:1;" target="blank" href="${localStorage.getItem(data) || "#"}"> ${e.name
                     } </a>
+                    <div style="color: #d5ff08; font-size:10px; position:absolute; left:5px; bottom:5px;"> ${e.room[index]}</div>
             <span class="btn-addLink" style="">+</span>
         </div>
     `;
@@ -6714,46 +6716,3 @@ top: 53px;
 z-index: 99999;
 width: 1600px;` : ''
 
-function calc() {
-     const percent = 40
-     const soTien1tinchi = 676;
-     const s = document.querySelectorAll('#ctl00_ContentPlaceHolder1_ctl00_gvHocPhi tr');
-     s.forEach((element) => {
-          const stcCol = element.querySelector("td:nth-child(6)");
-          const stien = element.querySelector("td:nth-child(8)");
-          const stien2 = element.querySelector("td:nth-child(10)");
-          console.log("stien", stien);
-          if (stcCol) {
-               let stc = Number(stcCol.querySelector('span').innerHTML);
-               console.log(stc);
-               let amount = soTien1tinchi * stc
-               stien.innerHTML = amount.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&.');
-               stien2.innerHTML = amount.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&.');
-
-          }
-
-     })
-     console.log(s);
-     const sotinchi = Number(document.querySelector("#ctl00_ContentPlaceHolder1_ctl00_SoTinChi").innerHTML);
-
-     const maxhocphi = soTien1tinchi * sotinchi
-     document.querySelector("#ctl00_ContentPlaceHolder1_ctl00_lblTongTien").innerHTML = 'Tổng số tiền học phí là:'
-     document.querySelector("#ctl00_ContentPlaceHolder1_ctl00_lblDongLanDau").innerHTML = 'Học bổng đã trừ (40%): '
-     document.querySelector("#ctl00_ContentPlaceHolder1_ctl00_lblDaDongHKOffline1").innerHTML = 'Học phí còn lại phải đóng: '
-
-     const hocPhiTxt = document.querySelector("#ctl00_ContentPlaceHolder1_ctl00_lblphaiDong")
-     const hocBongTxt = document.querySelector("#ctl00_ContentPlaceHolder1_ctl00_lblDongLanDau1")
-     const hocphiConlaiTxt = document.querySelector("#ctl00_ContentPlaceHolder1_ctl00_lblDaDongHKOffline")
-     const hocphiConnoTxt = document.querySelector("#ctl00_ContentPlaceHolder1_ctl00_lblConNoHocKy")
-
-     const hocbong = maxhocphi / 100 * percent;
-     const tienconlai = maxhocphi - hocbong;
-
-     hocPhiTxt.innerHTML = maxhocphi.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&.');
-     hocBongTxt.innerHTML = hocbong.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&.')
-     hocphiConlaiTxt.innerHTML = tienconlai.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&.')
-     hocphiConnoTxt.innerHTML = tienconlai.toFixed(3).replace(/\d(?=(\d{3})+\.)/g, '$&.')
-
-     console.log({ hocbong, tienconlai, soTien1tinchi })
-}
-calc();
